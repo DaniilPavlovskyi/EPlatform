@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/eplatform
+    username: eplatform
+    password: eplatform
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+  application:
+    name: UserService
+
+  data:
+    redis:
+      host: localhost
+      port: 5555
+
+application:
+  security:
+    jwt:
+      secret-key: 404EasdAS7D6Asgsdjajalksd87a7776AAS7D09AASDJXMzllasdpiweeqwej123
+      expiration: 86400000
+      refresh-token:
+        expiration: 604800000
+
+server:
+  port: 8081
