@@ -1,19 +1,21 @@
-package com.dp.userservice.user;
+package com.dp.userservice.auth;
 
+import com.dp.userservice.user.UserService;
 import com.dp.userservice.auth.request.LoginRequest;
 import com.dp.userservice.auth.request.RegisterRequest;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
-@RestController("/api/user")
-public class UserController {
+@RestController("/api/auth")
+public class AuthController {
 
-    private final UserService userService;
+    private final AuthService authService;
 
     @PostMapping("/register")
     public String register(@RequestBody @Valid RegisterRequest request) {
@@ -21,8 +23,8 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public String login(@RequestBody @Valid LoginRequest request) {
-        return userService.verify(request);
+    public ResponseEntity<LoginResponse> login(@RequestBody @Valid LoginRequest request) {
+        return ResponseEntity.ok().body(authService.verify(request));
     }
 
 

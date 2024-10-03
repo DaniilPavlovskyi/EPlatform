@@ -1,10 +1,9 @@
-package com.dp.userservice.validation;
+package com.dp.userservice.security.validation;
 
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 
 import java.util.function.IntPredicate;
-import java.util.function.Predicate;
 
 public class PasswordValidator implements ConstraintValidator<ValidPassword, String> {
 

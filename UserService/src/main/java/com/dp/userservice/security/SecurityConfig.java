@@ -34,7 +34,6 @@ public class SecurityConfig {
 
     private final AuthenticationProvider authenticationProvider;
     private final UserDetailsService userDetailsService;
-
     private final JwtFilter jwtFilter;
 
     @Bean

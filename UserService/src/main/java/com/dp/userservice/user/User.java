@@ -24,9 +24,12 @@ import java.util.Set;
 public class User implements Serializable, UserDetails, Principal {
 
     @Id
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private String id;
 
+    @Column(name = "username", unique = true, updatable = false, nullable = false)
     private String username;
+    @Column(name = "password", nullable = false)
     private String password;
 
     @Builder.Default

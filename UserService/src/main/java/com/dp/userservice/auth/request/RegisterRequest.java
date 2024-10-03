@@ -1,6 +1,6 @@
-package com.dp.userservice.user;
+package com.dp.userservice.auth.request;
 
-import com.dp.userservice.validation.ValidPassword;
+import com.dp.userservice.security.validation.ValidPassword;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;

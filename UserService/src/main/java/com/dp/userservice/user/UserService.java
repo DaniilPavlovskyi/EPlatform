@@ -2,7 +2,7 @@ package com.dp.userservice.user;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.Cacheable;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -10,10 +10,11 @@ import org.springframework.stereotype.Service;
 public class UserService {
 
     private final UserRepository userRepository;
+    private final AuthenticationManager authenticationManager;
 
-    @Cacheable(value = "users", key = "#id")
-    public User findUserById(Long id) {
-        return userRepository.findById(id).orElse(null);
-    }
+//    @Cacheable(value = "users", key = "#id")
+//    public User findUserById(Long id) {
+//        return userRepository.findById(id).orElse(null);
+//    }
 
 }

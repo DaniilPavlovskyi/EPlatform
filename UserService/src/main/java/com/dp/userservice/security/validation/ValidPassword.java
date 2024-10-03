@@ -1,4 +1,4 @@
-package com.dp.userservice.validation;
+package com.dp.userservice.security.validation;
 
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;
